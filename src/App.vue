@@ -22,8 +22,8 @@
 </template>
 
 <script>
-import ImageEdit from "@/components/ImageEdit";
-import TextEdit from "@/components/TextEdit";
+import ImageEdit from "@/components/wysiwyg/ImageEdit";
+import TextEdit from "@/components/wysiwyg/TextEdit";
 import Board from "@/components/DnD/Board";
 import Card from "@/components/DnD/Card";
 
@@ -55,13 +55,11 @@ body {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-  margin-top: 60px;
 }
 
 .flexbox {
   display: flex;
   justify-content: space-between;
-  height: 100vh;
 
   overflow: hidden;
 

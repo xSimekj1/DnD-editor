@@ -7,33 +7,29 @@
         hidden
     >
     <div
-        class="image-edit__file-wrapper"
-    >
+        v-if="url"
+        class="image-edit__control-panel">
       <div
-          v-if="url"
-          class="image-edit__control-panel">
-        <div
-            class="image-edit__control-panel__delete"
-            @click="removeImage"
-        >
-          DEL
-        </div>
+          class="image-edit__control-panel__delete"
+          @click="removeImage"
+      >
+        DEL
       </div>
-      <img
-          v-if="!url"
-          src="https://via.placeholder.com/360x240"
-          alt="placeholder image"
-          class="image-edit__image"
-          @click="changeImage"
-      >
-      <img
-          v-else
-          :src="url"
-          alt="placeholder image"
-          class="image-edit__image"
-          @click="changeImage"
-      >
     </div>
+    <img
+        v-if="!url"
+        src="https://via.placeholder.com/360x240"
+        alt="placeholder image"
+        class="image-edit__image"
+        @click="changeImage"
+    >
+    <img
+        v-else
+        :src="url"
+        alt="placeholder image"
+        class="image-edit__image"
+        @click="changeImage"
+    >
   </div>
 </template>
 
@@ -67,10 +63,12 @@ export default {
 .image-edit {
   position: relative;
   width: 100%;
-  border: 3px solid #42b983;
-}
 
-.image-edit__file-wrapper {
+  border: 3px solid transparent;
+
+  &:hover {
+    border: 3px solid #42b983;
+  }
 }
 
 .image-edit__image {

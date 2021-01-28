@@ -41,17 +41,25 @@ export default {
 .text-edit {
   position: relative;
   display: flex;
+
+  border: 3px solid transparent;
+
+  &:hover {
+    border: 3px solid #42b983;
+    cursor: pointer;
+  }
 }
 
 .text-edit__input {
   position: absolute;
   width: 0;
   right: 0;
-  color: transparent;
 
+  color: transparent;
   border: 0 transparent;
 
   overflow: hidden;
+  opacity: 0;
 
   &:focus {
     outline: none;
